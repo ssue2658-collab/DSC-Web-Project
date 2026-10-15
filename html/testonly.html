@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 첫 웹페이지</title>
+    <style>
+        /*웹문서 초기값:DOM(Document Object Modeling)를 기본값(marjin)등 간격긍 0px로 세팅하는 값이다. */
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            /* border: 1px solid red; */
+            padding: 20px;
+             margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+
+        }
+         a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+     /* 1. 헤더 상단 */
+    .top-header {
+      max-width: 1200px;
+      min-height: 135px;
+      margin: 0 auto;
+      padding: 28px 0 18px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: start;
+    }
+
+     /* 왼쪽 광고 */
+    .ad {
+      width: 234px;
+      height: 60px;
+      background-color: #2859a5;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* 가운데 로고와 검색창 */
+    .brand-area {
+      text-align: center;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: bold;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      color: #399bd6;
+      font-size: 34px;
+      margin-right: 8px;
+    }
+
+    .search-box {
+      width: 300px;
+      height: 38px;
+      margin: 14px auto 0;
+      border: 2px solid #222;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .search-box input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .search-button {
+      border: none;
+      background: none;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* 오른쪽 로그인 및 메뉴 */
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      padding-top: 20px;
+    }
+
+    .login {
+      color: #3156a5;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .print {
+      border: 1px solid #7ab4ff;
+      border-radius: 20px;
+      padding: 5px 12px;
+      color: #3156a5;
+      white-space: nowrap;
+    }
+
+    .menu {
+      font-size: 27px;
+      color: #111;
+    }
+
+ /* 2. 헤더 하단 메뉴 */
+    .bottom-header {
+      border-top: 1px solid #ddd;
+      border-bottom: 2px solid #222;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      min-height: 40px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* 왼쪽 뉴스 카테고리 */
+    .categories {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .categories a {
+      background-color: #4967bd;
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 0 3px;
+      white-space: nowrap;
+    }
+
+          div.news-colums1 {
+          
+            column-gap: 40px;
+            font-family: sans-serif;
+            line-height: 1.6;
+            width: 800px;
+            border: 5px solid black;
+            padding: 20px;
+            margin: 0px auto
+        }
+    
+
+h1.news-title1{
+
+            
+            text-align: center;
+            width: 600px;
+            border: 1px solid black;
+            padding: 20px;
+            margin: 0px auto
+
+}
+
+    button {
+     
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: darkblue;
+      transform: scale(1.05);
+    }
+
+      /* 이미지가 들어갈 바깥 영역 */
+    .image-container {
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 12px;
+   
+    }
+
+    /* 이미지 기본 설정 */
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      
+    }
+
+    /* 마우스를 올렸을 때 */
+    .image-container:hover img {
+      transform: scale(1.1);
+    }
+
+
+    
+/* 뉴스 본문 전체 영역 */
+.news-grid {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+}
+
+/* 뉴스 한 구역 */
+.news-card {
+  min-width: 0; 
+  padding-bottom: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 뉴스 사진 */
+.news-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* 뉴스 제목 */
+.news-card h2 {
+  font-size: 21px;
+  line-height: 1.5;
+  margin: 12px 0 0;
+  color: #222;
+}
+
+/* 작은 화면에서는 한 열로 표시 */
+@media (max-width: 600px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+
+   <header class="top-header">
+
+    <!-- 왼쪽 광고 -->
+    <div class="ad">
+      어서와요&hearts;광고&hearts;클릭!
+    </div>
+
+    <!-- 가운데 로고와 검색창 -->
+    <div class="brand-area">
+      <div class="logo">
+        <span class="logo-mark">&Sscr;</span>ssue news
+      </div>
+
+      <form class="search-box" action="#" method="get">
+        <input type="search" aria-label="검색">
+        <button class="search-button" type="submit"
+                aria-label="검색하기">⌕</button>
+      </form>
+    </div>
+
+    <!-- 오른쪽 메뉴 -->
+    <div class="top-actions">
+      <a class="login" href="#">Log in</a>
+      <a class="print" href="#">Print edition</a>
+      <a class="menu" href="#" aria-label="메뉴">☰</a>
+    </div>
+
+  </header>
+
+  <!-- 하단 내비게이션 -->
+  <nav class="bottom-header">
+    <div class="nav-inner">
+
+      <!-- 뉴스 카테고리 -->
+      <div class="categories">
+        <a href="#">노여사</a>
+        <a href="#">주하</a>
+        <a href="#">건희</a>
+        <a href="#">현석</a>
+        
+      </div>
+
+  
+
+    </div>
+  </nav>
+    
+<!-- 뉴스 본문 시작 -->
+<main class="news-grid">
+
+  <!-- 첫 번째 구역 -->
+  <article class="news-card">
+    <img
+      src="https://placehold.co/300x300?text=SSUE"
+      alt="이미지1"
+    >
+    <h2>정임이 파크골프 자격증 도전</h2>
+  </article>
+
+  <!-- 두 번째 구역 -->
+  <article class="news-card">
+    <img
+      src="https://placehold.co/300x300?text=SSUE"
+      alt="2026 가을여행-조개만 잡다 끝"
+    >
+    <h2>2026 가을여행-조개만 잡다 끝</h2>
+  </article>
+
+  <!-- 세 번째 구역 -->
+  <article class="news-card">
+    <img
+      src="/image/비숑프리제.png"
+      alt="하얀 비숑프리제"
+    >
+    <h2>강아지를 찾습니다!</h2>
+  </article>
+
+  <!-- 네 번째 구역 -->
+  <article class="news-card">
+    <img
+      src="/image/닥스훈트.png"
+      alt="닥스훈트"
+    >
+    <h2>간식을 탐내는 까미</h2>
+  </article>
+
+</main>
+<!-- 뉴스 본문 끝 -->
+  
+
+
+    <h2>이미지 확대 효과</h2>
+
+  <div class="image-container">
+    <img
+      src="\image\비숑프리제.png" alt="하얀색 비숑 강아지" width="300" >
+      
+   
+    >
+  </div>
+   <div class="news-colums1">
+        <p>나의 첫 웹페이지 제작 연습입니다.</p>
+     <button>마우스를 올려보세요</button>
+
+    </div>
+
+
+</body>
+
+</html>

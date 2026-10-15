@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>앵커 태그 2단계 - 다양한 링크</title>
+
+
+    <style>
+html{scroll-behavior: smooth;
+
+}
+
+    </style>
+</head>
+
+<body id="top">
+    <h1>앵커 태그 2단계 : 다양한 링크 만들기</h1>
+
+    <!--①. 새 창 링크 + 보안 속성 rel~~-->
+    <!--"target="blank"를 적용할 때 rel="nooperner noreferrer"-->
+    <h2>① 새 창/ 현재 창 링크</h2>
+    <p>
+        <a href="https://www.google.com" target="_blank" rel="nooperner noreferrer">구글(새 창)</a>
+        <a href="https://www.google.com" target="_self" rel="nooperner noreferrer" >구글(현재 창)</a>
+    </p>
+    <!--②. 메일 보내기 : 제목(subject)과 본문(body)까지 미리 채우기-->
+    <!--띄어쓰기는 %20, 여러 값은 &로 연결-->
+    <h2>② 메일 보내기 : 제목(subject)과 본문(body)까지 미리 채우기</h2>
+    <p>
+        <a href="mailto:ssue2658@gmail.com?subject=수강%20문의&body=안녕하세요.%0a 장수 사과 구매 문의 드립니다." target="_blank" rel="nooperner noreferrer" title="장수 사과 담당자 메일 발송">🍎사과 구매 문의드립니다.🍎</a>
+    </p>
+    <!--③전화 걸기 : 스마트폰에서 누르면 전화 앱이 열림-->
+    <h2 >③ 전화 걸기</h2>
+    <p>
+        <a href="tel:010-3792-2658" title="담당자 연결">담당자: &phone;010-3792-2658</a>
+    </p>
+    <!--④같은 폴더의 다른 HTML 파일로 이동(상대경로)-->
+    <h2>④ 내 사이트의 다른 페이지로 이동</h2>
+    <p style="color: rgb(34, 187, 60); font-weight:bolder; font-size: 50px;>
+        <a href="/html/test09-3.html"  target="_blank" title="9-3서브페이지로 이동합니다".>&#128478;9단계 뉴스컬럼 페이지 이동</a>
+    </p>
+
+    <!--⑤이미지 링크 걸기 : a태그 안에 img 넣기-->
+    <h2 style="color: red;" >⑤ 이미지 링크</h2>
+    <p>
+        <a href="https://www.naver.com" target="_blank" rel="nooperner noreferrer"><img src="https://placehold.co/300x100?text=NAVER"  alt="네이버이동" title="네이버로 이동하기"></a><br>
+        <a href="https://www.naver.com" target="_blank" rel="nooperner noreferrer"><img src="/image/네이버로고.jpg"  alt="네이버이동" title="네이버로 이동하기"></a>
+
+        <a href="https://www.naver.com" target="_blank" rel="nooperner noreferrer"><img src="/image/네이버버튼.png"  alt="네이버이동" title="네이버로 이동하기"></a>
+    </p>
+
+    <!--⑥파일 다운로드 : download 속성(같은 사이트의 파일에서 동작)-->
+    <h2>⑥ 파일 다운로드</h2>
+    <p>
+        <a href="/image/닥스훈트.png" download="실습이미지.jpg" style="color: blue; font-size: 30px;">실습 이미지 다운로드 받기</a>
+         <a href="/html/test01.html" download="실습이미지.html">실습 HTML 파일 다운로드 받기</a>
+    </p>
+
+    <!--⑦스크롤 공간 확보-->
+    <div style="height: 800px;">&#11015;아래로 스크롤 하세요.</div>
+
+    <!--7. 맨위로 이동 : body태그에 id값 id=:"top"> 적용 후 이동-->
+
+    <p>
+        <a href="#top">▲ 맨 위로</a>
+    </p>
+</body>
+
+</html>
